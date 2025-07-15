@@ -5,7 +5,6 @@ export default async function Home() {
   const res =  await fetch('http://localhost:3000/api/posts');
   const posts = await res.json();
 
-  console.log(posts)
   return (
     <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start m-4">
       <PostsList>
