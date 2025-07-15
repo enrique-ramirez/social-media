@@ -15,9 +15,9 @@ export default function Post({ user, date, content, id }: PostType) {
         <img className="size-10 rounded-box" src={user.avatar} alt={user.name} />
       </Link>
       <div>
-        <div><Link href={`/profile/${user.id}`}>{user.name}</Link></div>
+        <div><Link href={`/profile/${user.id}`} className="hover:underline">{user.name}</Link></div>
         <div className="text-xs uppercase font-semibold opacity-60 mb-2.5">
-          <Link href={`/post/${id}`}>{formattedDate}</Link>
+          <Link href={`/post/${id}`} className="hover:underline">{formattedDate}</Link>
         </div>
 
         <div className="list-col-wrap text-s">
