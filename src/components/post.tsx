@@ -10,11 +10,11 @@ export default function Post({ user, date, content }: Post) {
 
   return (
     <li className="list-row">
-      <Link href={`/users/${user.id}`}>
+      <Link href={`/profile/${user.id}`}>
         <img className="size-10 rounded-box" src={user.avatar} alt={user.name} />
       </Link>
       <div>
-        <div><Link href={`/users/${user.id}`}>{user.name}</Link></div>
+        <div><Link href={`/profile/${user.id}`}>{user.name}</Link></div>
         <div className="text-xs uppercase font-semibold opacity-60 mb-2.5">{formattedDate}</div>
 
         <div className="list-col-wrap text-xs">
