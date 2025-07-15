@@ -7,7 +7,7 @@ export default async function Home() {
   const posts = await res.json();
 
   return (
-    <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start m-4">
+    <section className="container mx-auto m-8">
       <PostsList>
         <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Most recent activity:</li>
         {posts.map((post) => (
@@ -18,6 +18,6 @@ export default async function Home() {
       </PostsList>
 
       <Pagination />
-    </div>
+    </section>
   );
 }
