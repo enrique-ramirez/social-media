@@ -1,24 +1,10 @@
-import { faker } from '@faker-js/faker';
-import generateUser from '@/app/utils/generateUser';
-import type { User } from '@/app/utils/generateUser';
-
-export type Post = {
-  id: string;
-  user: User;
-  date: string;
-  content: string;
-}
+import generatePost from '@/app/utils/generatePost';
 
 export async function GET() {
   const posts = [];
 
   for (let i = 0; i < 20; i++) {
-    posts.push({
-      id: faker.string.uuid(),
-      user: generateUser(),
-      date: faker.date.past(),
-      content: faker.lorem.paragraphs(2),
-    })
+    posts.push(generatePost())
   }
   // Ugly sorting from latest to oldest
   posts.sort((a, b) => (new Date(b.date)) - (new Date(a.date)))

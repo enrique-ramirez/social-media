@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function Nav() {
   return (
     <div className="navbar bg-base-100 shadow-sm">
-      <div className="flex-1">
+      <Link className="flex-1" href="/">
         social.<strong>media</strong>
-      </div>
+      </Link>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li><Link href="/">Home</Link></li>

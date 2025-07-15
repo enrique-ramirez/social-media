@@ -1,5 +1,6 @@
 import PostsList from "@/components/posts-list";
 import Post from "@/components/post";
+import Pagination from "@/components/pagination";
 
 export default async function Home() {
   const res =  await fetch('http://localhost:3000/api/posts');
@@ -10,9 +11,13 @@ export default async function Home() {
       <PostsList>
         <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Most recent activity:</li>
         {posts.map((post) => (
-          <Post key={post.id} {...post} />
+          <li key={post.id} className="list-row">
+            <Post {...post} />
+          </li>
         ))}
       </PostsList>
+
+      <Pagination />
     </div>
   );
 }
