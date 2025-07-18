@@ -1,17 +1,7 @@
 import { faker } from "@faker-js/faker"
+import type { User } from "@/app/types/user";
 
-export type User = {
-  id: string;
-  avatar: string;
-  name: string;
-  gender: string;
-  email: string;
-  location: string;
-  bio: string;
-  about: string;
-}
-
-export default function generateUser() {
+export default function generateUser(): User {
   return {
     id: faker.string.uuid(),
     avatar: faker.image.avatar(),

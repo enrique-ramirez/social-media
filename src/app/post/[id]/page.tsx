@@ -1,5 +1,6 @@
 import Post from '@/components/post';
 import CommentForm from '@/components/commentForm';
+import { Post as PostType } from '@/app/types/post';
 
 export default async function PostPage({
   params,
@@ -8,7 +9,7 @@ export default async function PostPage({
 }) {
   const { id } = await params;
   const res = await fetch(`http://localhost:3000/api/post/${id}`);
-  const post = await res.json();
+  const post: PostType = await res.json();
 
   return (
     <section className="container mx-auto m-8">

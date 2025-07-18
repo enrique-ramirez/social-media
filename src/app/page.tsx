@@ -1,10 +1,11 @@
 import PostsList from "@/components/posts-list";
 import Post from "@/components/post";
 import Pagination from "@/components/pagination";
+import type { Post as PostType } from "@/app/types/post";
 
 export default async function Home() {
   const res =  await fetch('http://localhost:3000/api/posts');
-  const posts = await res.json();
+  const posts: PostType[] = await res.json();
 
   return (
     <section className="container mx-auto m-8">

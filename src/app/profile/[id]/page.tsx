@@ -1,3 +1,5 @@
+import type { User } from "@/app/types/user";
+
 export default async function Profile({
   params
 }: {
@@ -5,7 +7,7 @@ export default async function Profile({
 }) {
   const { id } = await params;
   const res = await fetch(`http://localhost:3000/api/user/${id}`);
-  const user = await res.json();
+  const user: User = await res.json();
 
   return (
     <section className="container mx-auto m-8">

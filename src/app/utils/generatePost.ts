@@ -1,15 +1,8 @@
 import { faker } from '@faker-js/faker';
 import generateUser from '@/app/utils/generateUser';
-import type { User } from '@/app/utils/generateUser';
+import type { Post } from '@/app/types/post';
 
-export type Post = {
-  id: string;
-  user: User;
-  date: string;
-  content: string;
-}
-
-export default function generatePost() {
+export default function generatePost(): Post {
   return {
     id: faker.string.uuid(),
     user: generateUser(),

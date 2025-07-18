@@ -1,4 +1,6 @@
+import { NextResponse } from "next/server";
 import generateUser from "@/app/utils/generateUser";
+import type { User } from "@/app/types/user";
 
 export async function GET(request: Request, {
   params
@@ -6,8 +8,5 @@ export async function GET(request: Request, {
   params: Promise<{ id: string }>
 }) {
   const { id } = await params;
-  return new Response(JSON.stringify({ ...generateUser(), id }), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' },
-  });
+  return NextResponse.json({ ...generateUser(), id });
 }
